@@ -1,13 +1,65 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Upordown</title>
+  <title>PeanutGalleree</title>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <ul class="hmenu">
+  <div id="header"/>
+     <div class="wrap">
+      
+        <h1><a href="home.html" title=""></a></h1>
+        
+        <div id="main-navigation">
+            <ul class="dd-menu">
+                <li class="current-menu-item"><a href="home.html" title="Home Page">Home</a></li>
+                <li><a href="about.html" title="About Us Page">About</a></li>
+                <li>
+                   <a href="page-styles.html" title="Sample">Sample</a>
+                   <ul>
+                       <li><a href="gallery-2col.html" title="Gallery">Elements</a>
+                           <ul>
+                               <li><a href="#" title="Sub Item 1">Sub Item 1</a></li>
+                               <li><a href="#" title="Sub Item 2">Sub Item 2</a></li>
+                               <li><a href="#" title="Sub Item 3">Sub Item 3</a></li>
+                               <li><a href="#" title="Sub Item 4">Sub Item 4</a></li>
+                           </ul>
+                       </li>
+                       <li><a href="about-full.html" title="About Full">About Full</a></li>
+                       <li><a href="page-styles.html" title="Page Styles">Page Styles</a></li>
+                   </ul>
+                </li>
+                <li> 
+                  <a href="blog-posts.html" title="Blog">Blog</a>
+                  <ul>
+                       <li><a href="blog-posts.html" title="Blog Posts">Blog Posts</a></li>
+                       <li><a href="single-post.html" title="Single Post">Single Post</a></li>
+                   </ul>
+                </li>
+                <li> 
+                   <a href="gallery-2col.html" title="Gallery">Gallery</a>
+                   <ul>
+                       <li><a href="gallery-2col.html" title="">Gallery 2col</a></li>
+                       <li><a href="gallery-4col.html" title="">Gallery 4col</a></li>
+                       <li><a href="gallery-big-list.html" title="">Gallery big list</a></li>
+                   </ul>
+                </li>
+                <li><a href="contact.html" title="Contact">Contact</a></li>
+            </ul><!-- end dd-menu -->
+                    
+            </div><!-- end main-navigation -->
+        
+    </div><!-- end wrap -->
+    </div><!-- end header --> 
+   
+   
+   
+   
+   
+   
+    <ul class="hmenu">
     <%= render 'shared/navigation' %>
   </ul>
   <%- flash.each do |name, msg| -%>
@@ -15,6 +67,114 @@
   <%- end -%>
 
 <%= yield %>
+ <div id="footer">
+    <div class="wrap">
+    
+      <div class="c-3">
+                <div class="widget widget-upcoming">
+                  <h3 class="widget-title">UPCOMING EVENTS</h3>
+                  <ul>
+                       <li>
+                          <h5>
+                             <span class="date">
+                                <span>APR</span>
+                                <span class="day">30</span>
+                              </span>
+                              <a href="#" title="PAYING PRIVATE SCHOOL TUTTION">PAYING PRIVATE SCHOOL TUTTION</a>
+                          </h5>
+                          <p>Suspendisse dictu m suscipit odio. Nylla dui arcu, fermentum quis,<br />
+                             <span>The bookstore &gt;&gt; 10:00am - 4:00pm</span>
+                          </p>
+                       </li>
+                       <li>
+                          <h5>
+                             <span class="date">
+                                <span>APR</span>
+                                <span class="day">30</span>
+                              </span>
+                              <a href="#" title="PAYING PRIVATE SCHOOL TUTTION">PAYING PRIVATE SCHOOL TUTTION</a>
+                          </h5>
+                          <p>Suspendisse dictu m suscipit odio. Nylla dui arcu, fermentum quis,<br />
+                             <span>The bookstore &gt;&gt; 10:00am - 4:00pm</span>
+                          </p>
+                       </li>
+                  </ul>
+                </div>
+            </div>
+            <div class="c-3">
+               <div class="widget widget-latest-news">
+                  <h3 class="widget-title">LATEST NEWS</h3>
+                  <ul>
+                       <li>
+                          <p class="meta"><span class="date">APR|10|2011</span></p>
+                          <h5><a href="#" title="">LONG TERM ACATEMIC ACHEVEMENT</a></h5>
+                            <p>Sed ut perspicia tercit pero error sit voluptatem accusantium dole laudatium, totam rem aperiam, eaque ipsa quae ab illo inventore quasi architecto.</p>
+                       </li>
+                         <li>
+                          <p class="meta"><span class="date">APR|10|2011</span></p>
+                          <h5><a href="#" title="">LONG TERM ACATEMIC ACHEVEMENT</a></h5>
+                            <p>Sed ut perspicia tercit pero error sit voluptatem accusantium dole laudatium, totam rem aperiam, eaque ipsa quae ab illo inventore quasi architecto.</p>
+                       </li>
+                  </ul>
+              </div>
+          </div>
+            <div class="c-3">
+              <div class="widget widget-latest-posts">
+                <h3 class="widget-title">LATEST POSTS</h3>
+                  <ul>
+                       <li><h5><a href="#" title="">LONG TERM ACATEMIC ACHEVEMENT</a></h5></li>
+                       <li><h5><a href="#" title="">POSITIVE ATTITUDES AND BEHAVIOR</a></h5></li>
+                       <li><h5><a href="#" title="">MORE SUCCESSFUL PROGRAMS</a></h5></li>
+                       <li><h5><a href="#" title="">MORE EFFECTIVE SCHOOLS</a></h5></li>
+                       <li><h5><a href="#" title="">MORE EFFECTIVE SCHOOLS</a></h5></li>
+                       <li><h5><a href="#" title="">LONG TERM ACATEMIC ACHEVEMENT</a></h5></li>
+                         <li><h5><a href="#" title="">MORE EFFECTIVE SCHOOLS</a></h5></li>
+                       <li><h5><a href="#" title="">MORE EFFECTIVE SCHOOLS</a></h5></li>
+                  </ul>
+              </div>
+            </div>
+            <div class="c-3">
+                <div class="widget widget-contact">
+                    <h3 class="widget-title">CONTACT US</h3>
+                        
+                    <form enctype="multipart/form-data" method="post" action="php/mail.php" id="reservationform"> 
+                        <div class="send-form">   
+                           
+                              <p>
+                              <label>*Your Name:</label>
+                              <input class="u-3" name="name" id="name1" />
+                              </p>
+                              <p>
+                              <label>*Your E-mail:</label>
+                              <input class="u-3" name="email" id="email1" />
+                              </p>
+                              <p>
+                              <label>Your Message:</label>
+                              <textarea class="u-3" name="message" id="message1" cols="80" rows="3"></textarea>
+                              </p>
+                              <p>
+                              <input type="submit" name="" class="submit" value="Contact Us" />
+                              </p>
+                              
+                         </div><!--  end send-form -->   
+                         </form> 
+                </div><!--  end widget --> 
+            </div>
+            
+    </div><!-- end wrap -->
+    
+        <div id="sub-footer" class="clearfix">
+            
+                    <p id="copyright">&copy; 2011 aislindesign</p>
+                    <ul class="subfooter-menu">
+                        <li><a href="" title="">Terms &amp; Conditions</a></li>
+                        <li><a href="" title="">Copyrights</a></li>
+                        <li><a href="" title="">Site Map</a></li>
+                    </ul>
+                    
+        </div><!-- end sub-footer -->
 
+    </div><!-- end footer -->
+    
 </body>
 </html>
