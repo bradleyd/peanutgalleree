@@ -7,24 +7,28 @@
  *= require style
  *= require turquise-grey
 */
-ul.hmenu {
-  list-style: none;
-  margin: 0 0 2em;
-  padding: 0;
-}
-ul.hmenu li {
-  display: inline;
-}
+
 #flash_notice, #flash_alert {
-  padding: 5px 8px;
-  margin: 10px 0;
+    border-radius: 12px 12px 12px 12px;
+    border-style: solid;
+    border-width: 1px;
+    margin: 0 0 18px;
+    padding: 9px 15px;
 }
 #flash_notice {
-  background-color: #CFC;
-  border: solid 1px #6C6;
-}
-#flash_alert {
-  background-color: #FCC;
-  border: solid 1px #C66;
+  background-color: #CFFEBF;
+  border-color: #8FE573;
+  color: #005826;
 }
 
+#flash_alert {
+  background-color: #FFDFDF;
+  border-color: #FFA5A5;
+  color: #BF0000;
+}
+
+#flash_info {
+  background-color: #BFEBFE;
+  border-color: #73C0E6;
+  color: #000058;
+}

@@ -10,14 +10,14 @@
   <div id="header"/>
      <div class="wrap">
       
-        <h1><a href="home.html" title=""></a></h1>
+       <h1><%= link_to '' %></h1>
         
         <div id="main-navigation">
             <ul class="dd-menu">
-                <li class="current-menu-item"><a href="home.html" title="Home Page">Home</a></li>
-                <li><%= link_to "about", about_home_index_path %></li>
+                <li><%= link_to "Home", home_index_path  %></li>
+                <li><%= link_to "About", about_home_index_path %></li>
                 <li>
-                   <a href="page-styles.html" title="Sample">Sample</a>
+                <%= link_to 'Sample', home_index_path  %> 
                    <ul>
                        <li><a href="gallery-2col.html" title="Gallery">Elements</a>
                            <ul>
@@ -32,11 +32,7 @@
                    </ul>
                 </li>
                 <li> 
-                  <a href="blog-posts.html" title="Blog">Blog</a>
-                  <ul>
-                       <li><a href="blog-posts.html" title="Blog Posts">Blog Posts</a></li>
-                       <li><a href="single-post.html" title="Single Post">Single Post</a></li>
-                   </ul>
+                  <%= render 'shared/navigation' %>
                 </li>
                 <li> 
                    <a href="gallery-2col.html" title="Gallery">Gallery</a>
@@ -59,9 +55,6 @@
    
    
    
-    <ul class="hmenu">
-    <%= render 'shared/navigation' %>
-  </ul>
   <%- flash.each do |name, msg| -%>
     <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
   <%- end -%>
