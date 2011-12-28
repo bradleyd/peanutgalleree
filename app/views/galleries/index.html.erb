@@ -1,0 +1,51 @@
+      <div id="intro">
+        <div class="wrap">
+          
+            <div class="c-8">
+              <h1>Gallery 2 col</h1>
+                <p class="breadcrumbs">You are here: <a href="home.html">Home</a> &raquo; <a href="home.html">Gallery</a> &raquo; <strong>Gallery 2 col</strong> </p>
+            </div>
+            
+            <div class="c-4">
+              <div class="widget widget-social">
+                    <ul>
+                        <li><h3 class="widget-title">Kids voice social</h3></li>
+                        <li><a class="twitter-intro" title="" href="#"></a></li>
+                        <li><a class="facebook-intro" title="" href="#"></a></li>
+                        <li><a class="social-intro" title="" href="#"></a></li>
+                        <li><a class="rss-intro" title="" href="#"></a></li>
+                    </ul>
+               </div>
+            </div>
+            
+        </div><!-- end wrap -->
+        </div><!-- end intro --> 
+        
+  <div id="content"/>
+    <div class="wrap"/>
+      <div class="c-12">
+        <% @galleries.each do |gallery| %>
+          <ul class="portfolio-menu">
+          <li class="c-12 big-list">
+          <h3 class="title"><%= link_to gallery.name, gallery %></h3>
+          <h4><%= gallery.name %></h4>
+          <p class="image">
+          <%= link_to gallery,{:rel => 'example_group'} do %> 
+            <span class="gallery-big-list-mask"></span>
+            <%= image_tag "gallery-2-col-assets-1.jpg", :size => "627x307" %>
+          <%end%>
+          </p>
+          <div class="excerpt">
+            <p><%= gallery.name %> </p>
+          </div>
+              <a class="read-more">
+                Read More
+               <span class="circle-arrow"></span>
+             </a>
+         </ul>
+<%end%>
+ </div> 
+</div>
+</div>
+</div>
+</div>

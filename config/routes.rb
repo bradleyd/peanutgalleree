@@ -1,6 +1,8 @@
 Upordown::Application.routes.draw do
 
+
   resources :paintings
+  resources :galleries
 
   resources :home, :only => [:index, :about] do
     get 'about', :on => :collection

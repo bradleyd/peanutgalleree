@@ -1,0 +1,38 @@
+<div id="content">
+        <div class="wrap">
+            <div class="c-12">
+              
+                <h2 class="portfolio-title">Photo</h2>
+                <h4 class="portfolio-title">lorem ipsum dolor sit amet</h4>
+                <ul class="portfolio-menu">
+                <% @paintings.each do |painting| %>
+                  <li class="c-3 four-column">
+                        
+                        <p class="image">
+                          <%= link_to painting,{:rel => 'example_group'} do %> 
+                            <span class="gallery-4col-mask"></span>
+                            <%= image_tag "gallery-4-col-assets-1.jpg", :size => "194x157" %>
+                          <%end%>
+                        </p>
+                    </li>
+                 <% end %>
+                  <li class="c-3 four-column clearfix">
+                    <p class='image'>
+                    </p>
+                  </li>
+                
+                <div class="pagination">
+                    <ul>
+                        <li><a href="#" class="previous-1"><span class="circle-arrow-left"></span>Previous</a></li>
+                        <li><a href="#" class="current">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#" class="next-1">Next<span class="circle-arrow"></span></a></li>
+                    </ul>
+                </div>
+            
+            </div>    
+            </div><!-- end wrap -->
+    </div>

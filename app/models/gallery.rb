@@ -1,4 +1,4 @@
 class Gallery < ActiveRecord::Base
-  belongs_to :painting
+  has_many   :paintings
   belongs_to :user
 end

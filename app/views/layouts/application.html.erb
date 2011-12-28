@@ -35,13 +35,8 @@
                   <%= render 'shared/navigation' %>
                 </li>
                 <li> 
-                   <a href="gallery-2col.html" title="Gallery">Gallery</a>
-                   <ul>
-                       <li><a href="gallery-2col.html" title="">Gallery 2col</a></li>
-                       <li><a href="gallery-4col.html" title="">Gallery 4col</a></li>
-                       <li><a href="gallery-big-list.html" title="">Gallery big list</a></li>
-                   </ul>
-                </li>
+                   <%= link_to 'Gallery', galleries_path, :title => 'Gallery' %>
+                 </li>
                 <li><a href="contact.html" title="Contact">Contact</a></li>
             </ul><!-- end dd-menu -->
                     
