@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @painting.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @painting.description %>
+</p>
+
+<p>
+  <b>Iamge size:</b>
+  <%= @painting.iamge_size %>
+</p>
+
+<p>
+  <b>Image type:</b>
+  <%= @painting.image_type %>
+</p>
+
+
+<%= link_to 'Edit', edit_painting_path(@painting) %> |
+<%= link_to 'Back', paintings_path %>
