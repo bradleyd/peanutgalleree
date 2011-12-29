@@ -38,10 +38,10 @@
           <div class="excerpt">
             <p><%= gallery.name %> </p>
           </div>
-              <a class="read-more">
-                Goto Gallery
+            <%= link_to gallery, :class => "read-more" do %>
+               Goto Gallery
                <span class="circle-arrow"></span>
-             </a>
+             <% end %>
              <%= link_to new_painting_path, :class => "read-more" do %>
                Add Paintings
                <span class="circle-arrow"></span>

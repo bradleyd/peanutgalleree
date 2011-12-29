@@ -1,3 +1,7 @@
+<div id="content">
+  <div class="wrap">
+    <div class="c-8">
+      <div class="page">
 <%= form_for(@painting) do |f| %>
   <% if @painting.errors.any? %>
     <div id="error_explanation">
@@ -27,7 +31,10 @@
     <%= f.label :image_type %><br />
     <%= f.text_field :image_type %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <%= f.submit 'Add Painting', :class => "button-submit" %>
 <% end %>
+
+</div>
+</div>
+</div>
+</div>
