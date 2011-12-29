@@ -1,9 +1,37 @@
+      <div id="intro">
+        <div class="wrap">
+          
+            <div class="c-8">
+              <h1>Gallery <%= @gallery.name %></h1>
+                <p class="breadcrumbs">You are here: <a href="home.html">Home</a> &raquo; <a href="home.html">Gallery</a> &raquo; <strong>Galleries</strong> </p>
+            </div>
+            
+            <div class="c-4">
+              <div class="widget widget-social">
+                    <ul>
+                        <li><h3 class="widget-title">Kids voice social</h3></li>
+                        <li><a class="twitter-intro" title="" href="#"></a></li>
+                        <li><a class="facebook-intro" title="" href="#"></a></li>
+                        <li><a class="social-intro" title="" href="#"></a></li>
+                        <li><a class="rss-intro" title="" href="#"></a></li>
+                    </ul>
+               </div>
+            </div>
+            
+        </div><!-- end wrap -->
+        </div><!-- end intro --> 
+
 <div id="content">
         <div class="wrap">
             <div class="c-12">
               
                 <h2 class="portfolio-title">Photo</h2>
                 <h4 class="portfolio-title">lorem ipsum dolor sit amet</h4>
+                 <%= link_to new_painting_path, :class => "read-more" do %>
+               Add Paintings
+               <span class="circle-arrow"></span>
+             <% end %>
+
                 <ul class="portfolio-menu">
                 <% @paintings.each do |painting| %>
                   <li class="c-3 four-column">
