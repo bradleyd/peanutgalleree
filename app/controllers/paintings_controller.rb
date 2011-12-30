@@ -24,8 +24,7 @@ class PaintingsController < ApplicationController
   # GET /paintings/new
   # GET /paintings/new.json
   def new
-    @painting = Painting.new
-
+    @painting = Painting.new(:gallery_id => params['gallery_id'])
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @painting }
@@ -44,7 +43,7 @@ class PaintingsController < ApplicationController
 
     respond_to do |format|
       if @painting.save
-        format.html { redirect_to @painting, notice: 'Painting was successfully created.' }
+        format.html { redirect_to gallery_path(params[:painting][:gallery_id]), notice: 'Painting was successfully created.' }
         format.json { render json: @painting, status: :created, location: @painting }
       else
         format.html { render action: "new" }

@@ -42,13 +42,22 @@
                Goto Gallery
                <span class="circle-arrow"></span>
              <% end %>
-             <%= link_to new_painting_path, :class => "read-more" do %>
+             <%= link_to new_painting_path(:gallery_id => gallery), :class => "read-more" do %>
                Add Paintings
+               <span class="circle-arrow"></span>
+             <% end %>
+             <%= link_to gallery, :confirm => "Are you sure?", :method => :delete, :class => "read-more" do %>
+               Remove Gallery
                <span class="circle-arrow"></span>
              <% end %>
 
          </ul>
 <%end%>
+<%= paginate @galleries %>
+<%= link_to  new_gallery_path, :class => "read-more" do %>
+  Create Gallery
+  <span class="circle-arrow"></span>
+<% end %>
  </div> 
 </div>
 </div>

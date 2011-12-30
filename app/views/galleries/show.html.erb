@@ -27,7 +27,7 @@
               
                 <h2 class="portfolio-title">Photo</h2>
                 <h4 class="portfolio-title">lorem ipsum dolor sit amet</h4>
-                 <%= link_to new_painting_path, :class => "read-more" do %>
+                 <%= link_to new_painting_path(:gallery_id => @gallery), :class => "read-more" do %>
                Add Paintings
                <span class="circle-arrow"></span>
              <% end %>
@@ -39,7 +39,7 @@
                         <p class="image">
                           <%= link_to painting,{:rel => 'example_group'} do %> 
                             <span class="gallery-4col-mask"></span>
-                            <%= image_tag "gallery-4-col-assets-1.jpg", :size => "194x157" %>
+                            <%= image_tag painting.image_url(:thumb), :size => "194x157" if painting.image? %>
                           <%end%>
                         </p>
                     </li>

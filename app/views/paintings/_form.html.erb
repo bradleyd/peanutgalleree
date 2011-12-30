@@ -2,7 +2,7 @@
   <div class="wrap">
     <div class="c-8">
       <div class="page">
-<%= form_for(@painting) do |f| %>
+<%= form_for(@painting, :html => {:multipart => true}) do |f| %>
   <% if @painting.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@painting.errors.count, "error") %> prohibited this painting from being saved:</h2>
@@ -14,7 +14,7 @@
       </ul>
     </div>
   <% end %>
-
+<%= f.hidden_field :gallery_id %>
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
@@ -27,9 +27,16 @@
     <%= f.label :image_size %><br />
     <%= f.number_field :image_size %>
   </div>
+  <div>
+    <%= f.file_field :image %>
+  </div>
   <div class="field">
     <%= f.label :image_type %><br />
     <%= f.text_field :image_type %>
+  </div>
+  <div>
+    <%= f.label :remote_image_url, "or image URL" %><br />
+    <%= f.text_field :remote_image_url %>
   </div>
     <%= f.submit 'Add Painting', :class => "button-submit" %>
 <% end %>
