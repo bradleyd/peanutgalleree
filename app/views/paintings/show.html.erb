@@ -31,6 +31,11 @@
                    Delete Painting
                <span class="circle-arrow"></span>
              <% end %>
+             <%= link_to edit_painting_path(@painting), :class=>"read-more" do %>
+                   Edit Painting
+               <span class="circle-arrow"></span>
+             <% end %>
+
               </br>
                 <ul class="portfolio-menu">
                   <li class="c-3 four-column">
@@ -61,13 +66,13 @@
                                 </p>
                                 <a href="#" class="replay">Replay</a>
                                 <p><%= comment.try(:body) %></p>
-                                                        
                             </li>
                         </ol>
                         <% end %>
           </div>
 
           <div class="add-comment">
+                <h2>Leave a comment:</h2>
                 <%= form_for([@painting, @comment]) do |f| %>      
                 <p class="textarea">
                 <%= f.hidden_field :painting_id %>
@@ -89,13 +94,12 @@
                 <p>
                 <%= f.submit 'Send Comment', :class=>"button-submit" %>
                 </p>
-                <% end %>>
+                <% end %>
 
           </div>
 
 
-<%= link_to 'Edit', edit_painting_path(@painting) %> |
-<%= link_to 'Back', paintings_path %>
+<%= link_to 'Back', paintings_path, :class=>"button-submit" %>
 
 
 </div>
