@@ -1,25 +1,103 @@
-<p id="notice"><%= notice %></p>
+     <div id="intro">
+        <div class="wrap">
+          
+            <div class="c-8">
+              <h1>Painting <%= @painting.try(:name) %> </h1>
+                <p class="breadcrumbs">You are here: <a href="home.html">Home</a> &raquo; <a href="home.html">Gallery</a> &raquo; <strong>Create Painting</strong> </p>
+            </div>
+            
+            <div class="c-4">
+              <div class="widget widget-social">
+                    <ul>
+                        <li><h3 class="widget-title">Kids voice social</h3></li>
+                        <li><a class="twitter-intro" title="" href="#"></a></li>
+                        <li><a class="facebook-intro" title="" href="#"></a></li>
+                        <li><a class="social-intro" title="" href="#"></a></li>
+                        <li><a class="rss-intro" title="" href="#"></a></li>
+                    </ul>
+               </div>
+            </div>
+            
+        </div><!-- end wrap -->
+        </div><!-- end intro --> 
 
-<p>
-  <b>Name:</b>
-  <%= @painting.name %>
-</p>
+<div id="content">
+        <div class="wrap">
+            <div class="c-12">
+              
+                <h2 class="portfolio-title"><%= @painting.try(:name) %></h2>
+                <h4 class="portfolio-title"><%= @painting.try(:description) %></h4>
+                 <%= link_to painting_path(@painting), :method => :delete, :class => "read-more" do %>
+                   Delete Painting
+               <span class="circle-arrow"></span>
+             <% end %>
+              </br>
+                <ul class="portfolio-menu">
+                  <li class="c-3 four-column">
+                        <p class="image">
+                          <%= link_to @painting,{:rel => 'example_group'} do %> 
+                            <span class="gallery-4col-mask"></span>
+                            <%= image_tag @painting.image_url(:thumb), :size => "194x157" if @painting.image? %>
+                          <%end%>
+                        </p>
+                    </li>
+                  <li class="c-3 four-column clearfix">
+                    <p class='image'>
+                    </p>
+                  </li>
+</div>
+          <div id="comments">
+                        <h2><%= pluralize(@comments.count, 'Comment') %>: </h2>
+                        <% @comments.each do |comment| %>
+                        <ol>
+                            <li>
+                            	<p class="image">
+                                    <span class="polaroid-mask"></span>
+                                    <%= image_tag "avatar.jpg", :size => "73x60" %>
+                                </p>
+                                <p class="meta">
+                                    <span>Published by: <%= comment.try(:name) %></span>
+                                    <span>Date: <%= comment.try(:created_at) %></span>
+                                </p>
+                                <a href="#" class="replay">Replay</a>
+                                <p><%= comment.try(:body) %></p>
+                                                        
+                            </li>
+                        </ol>
+                        <% end %>
+          </div>
 
-<p>
-  <b>Description:</b>
-  <%= @painting.description %>
-</p>
+          <div class="add-comment">
+                <%= form_for([@painting, @comment]) do |f| %>      
+                <p class="textarea">
+                <%= f.hidden_field :painting_id %>
+                <%= f.label :body, :class=>"add-comment-heading" %>
+                <%= f.text_area :body, :class=>"u-4" %>
+                </p>
+                <p>
+                <%= f.label :name %> 
+                <%= f.text_field :name, :class=> "u-3" %> 
+                </p>
+                <p>
+                <label for="email">Your email:</label>
+                <input class="u-3" name="email" id="email">
+                </p>  
+                <p>
+                <label for="website">Your website:</label>
+                <input class="u-3" name="website" id="website">
+                </p> 
+                <p>
+                <%= f.submit 'Send Comment', :class=>"button-submit" %>
+                </p>
+                <% end %>>
 
-<p>
-  <b>Iamge size:</b>
-  <%= @painting.image_size %>
-</p>
-
-<p>
-  <b>Image type:</b>
-  <%= @painting.image_type %>
-</p>
+          </div>
 
 
 <%= link_to 'Edit', edit_painting_path(@painting) %> |
 <%= link_to 'Back', paintings_path %>
+
+
+</div>
+</div>
+

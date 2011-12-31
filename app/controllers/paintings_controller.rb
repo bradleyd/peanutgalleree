@@ -14,7 +14,8 @@ class PaintingsController < ApplicationController
   # GET /paintings/1.json
   def show
     @painting = Painting.find(params[:id])
-
+    @comments = @painting.comments
+    @comment = @painting.comments.build(:painting_id => params[:id]) 
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @painting }

@@ -1,7 +1,10 @@
 Upordown::Application.routes.draw do
 
 
-  resources :paintings
+
+  resources :paintings do
+    resources :comments
+  end
   resources :galleries
 
   resources :home, :only => [:index, :about] do
