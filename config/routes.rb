@@ -2,6 +2,8 @@ Upordown::Application.routes.draw do
 
 
 
+  resources :fans
+
   resources :paintings do
     resources :comments
   end

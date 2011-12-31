@@ -27,6 +27,7 @@
               
                 <h2 class="portfolio-title"><%= @painting.try(:name) %></h2>
                 <h4 class="portfolio-title"><%= @painting.try(:description) %></h4>
+                <%= link_to 'Back', gallery_path(@painting.gallery), :class=>"button-submit" %>
                  <%= link_to painting_path(@painting), :method => :delete, :class => "read-more" do %>
                    Delete Painting
                <span class="circle-arrow"></span>
@@ -64,7 +65,6 @@
                                     <span>Published by: <%= comment.try(:name) %></span>
                                     <span>Date: <%= comment.try(:created_at) %></span>
                                 </p>
-                                <a href="#" class="replay">Replay</a>
                                 <p><%= comment.try(:body) %></p>
                             </li>
                         </ol>

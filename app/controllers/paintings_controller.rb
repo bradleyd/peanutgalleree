@@ -1,4 +1,5 @@
 class PaintingsController < ApplicationController
+  before_filter :authenticate_user!,  :only => [:create, :edit, :destroy, :new]
   # GET /paintings
   # GET /paintings.json
   def index

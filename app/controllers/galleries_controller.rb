@@ -1,10 +1,10 @@
 class GalleriesController < ApplicationController
 before_filter :authenticate_user!,  :only => [:create, :edit, :destroy, :new]
   def index
-    if current_user
+    if current_user and current_user.galleries.present?
       @galleries = current_user.galleries.page(params[:page]).per(4)
     else
-      @galleries = Gallery.all
+      @galleries = Gallery.page(params[:page]).per(4)
     end
   end
 

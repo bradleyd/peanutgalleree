@@ -27,10 +27,16 @@
               
                 <h2 class="portfolio-title">Photo</h2>
                 <h4 class="portfolio-title">lorem ipsum dolor sit amet</h4>
-                 <%= link_to new_painting_path(:gallery_id => @gallery), :class => "read-more" do %>
+              <%= link_to  fans_path(:follower_id => @gallery.user, :gallery_id => @gallery.id), :method => :post, :class => "read-more" do %>
+                Become fan of Artist
+                <span class="circle-arrow"></span>
+              <% end %>
+
+              <%= link_to new_painting_path(:gallery_id => @gallery), :class => "read-more" do %>
                Add Paintings
                <span class="circle-arrow"></span>
              <% end %>
+             
               </br>
                 <ul class="portfolio-menu">
                 <% @paintings.each do |painting| %>
