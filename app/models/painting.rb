@@ -6,6 +6,9 @@ class Painting < ActiveRecord::Base
   has_many :comments
 
   mount_uploader :image, ImageUploader
+  
+  validates_length_of :name, :maximum=>10
+  validates_presence_of :image, :description
 
   after_save :send_new_painting_alert
 
