@@ -25,12 +25,18 @@
         <div class="wrap">
             <div class="c-12">
               
-                <h2 class="portfolio-title">Photo</h2>
-                <h4 class="portfolio-title">lorem ipsum dolor sit amet</h4>
-              <%= link_to  fans_path(:follower_id => @gallery.user, :gallery_id => @gallery.id), :method => :post, :class => "read-more" do %>
-                Become fan of Artist
-                <span class="circle-arrow"></span>
-              <% end %>
+                <h2 class="portfolio-title">Art Work</h2>
+                <h4 class="portfolio-title">This is your art work</h4>
+                <% if current_user and current_user.gallery_ids.include?(@gallery.id) %>
+                  <%= link_to gallery_path(@gallery), :class => "read-more" do %>
+                   This is your gallery. 
+                  <% end %>
+                <% else %>
+                  <%= link_to fans_path(:follower_id => @gallery.user, :gallery_id => @gallery.id), :method => :post, :class => "read-more" do %>
+                    Become fan of Artist
+                    <span class="circle-arrow"></span>
+                  <% end %>
+                <% end %>
 
               <%= link_to new_painting_path(:gallery_id => @gallery), :class => "read-more" do %>
                Add Paintings

@@ -10,7 +10,7 @@ class Painting < ActiveRecord::Base
   after_save :send_new_painting_alert
 
   def send_new_painting_alert
-    ArtistMailer.new_painting(self.gallery.user).deliver
+    ArtistMailer.new_painting(self.gallery.user, self).deliver
   end
    
 end
