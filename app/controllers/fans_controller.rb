@@ -1,4 +1,6 @@
 class FansController < ApplicationController
+before_filter :authenticate_user!,  :only => [:create, :edit, :destroy, :new]
+
   def create
     @fan = current_user.fans.build(:follower_id => params[:follower_id])
     if @fan.save

@@ -15,4 +15,16 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me
+
+  def has_fans?
+    self.inverse_fans.present? ? true : false
+  end
+
+  def fans_of
+    self.fans
+  end
+
+  def already_following? user_id
+    self.fans.map(&:follower_id).include?(user_id)
+  end
 end

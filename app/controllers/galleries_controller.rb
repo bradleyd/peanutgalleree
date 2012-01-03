@@ -12,7 +12,9 @@ before_filter :authenticate_user!,  :only => [:create, :edit, :destroy, :new]
 
   def show
     @gallery = Gallery.find(params[:id])
+    # @gallery_owner = @gallery.user
     @paintings = @gallery.paintings
+    @user = current_user
   end
 
   def create
