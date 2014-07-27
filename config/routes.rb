@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+  get 'galleries/index'
+
+  get 'galleries/show'
+
+  get 'galleries/destroy'
+
+  get 'galleries/update'
+
+  get 'galleries/new'
+
+  get 'galleries/edit'
+
   devise_for :users
   get 'welcome/index'
 
