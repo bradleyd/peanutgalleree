@@ -4,6 +4,10 @@ RSpec.describe GalleriesController, :type => :controller do
     
   login_user
 
+  before :each do
+   @gallery = FactoryGirl.create(:gallery)
+  end
+
   describe "GET index" do
     it "returns http success" do
       gallery = FactoryGirl.create(:gallery)
@@ -15,8 +19,9 @@ RSpec.describe GalleriesController, :type => :controller do
 
   describe "GET show" do
     it "returns http success" do
-      get :show
+      get :show, id: @gallery
       expect(response).to be_success
+      expect(assigns(:gallery)).to eq(@gallery)
     end
   end
 

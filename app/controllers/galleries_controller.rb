@@ -6,6 +6,8 @@ class GalleriesController < ApplicationController
   end
 
   def show
+    @user = current_user
+    @gallery = Gallery.find(params[:id])
   end
 
   def destroy
