@@ -1,10 +1,5 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
-require 'rspec/rails'
-require 'capybara/rspec'
 RSpec.configure do |config|
-   config.include Devise::TestHelpers, :type => :controller
-    config.extend ControllerMacros, :type => :controller
-
 # The settings below are suggested to provide a good initial experience
 # with RSpec, but feel free to customize to your heart's content.
 =begin
