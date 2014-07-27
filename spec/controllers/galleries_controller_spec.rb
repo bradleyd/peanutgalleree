@@ -6,8 +6,10 @@ RSpec.describe GalleriesController, :type => :controller do
 
   describe "GET index" do
     it "returns http success" do
+      gallery = FactoryGirl.create(:gallery)
       get :index
       expect(response).to be_success
+      expect(assigns(:galleries)).to eq([gallery])
     end
   end
 
