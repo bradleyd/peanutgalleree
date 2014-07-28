@@ -1,7 +1,20 @@
 Rails.application.routes.draw do
+  get 'paintings/index'
+
+  get 'paintings/new'
+
+  get 'paintings/destroy'
+
+  get 'paintings/edit'
+
+  get 'paintings/update'
+
+  get 'paintings/show'
+
   devise_for :users
   get 'welcome/index'
   resources :galleries
+  resources :paintings
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

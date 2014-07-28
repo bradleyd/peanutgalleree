@@ -1,0 +1,40 @@
+<%= form_for(@painting, :html => {:multipart => true}) do |f| %>
+  <% if @painting.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@painting.errors.count, "error") %> prohibited this painting from being saved:</h2>
+
+      <ul>
+      <% @painting.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <% f.hidden_field :gallery_id, value: @gallery.id %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :image_size %><br />
+    <%= f.number_field :image_size %>
+  </div>
+    <div class="field">
+    <%= f.label :image_type %><br />
+    <%= f.text_field :image_type %>
+  </div>
+  <div>
+    <%= f.file_field :image %>
+  </div>
+  <div>
+    <%= f.label :remote_image_url, "or image URL" %><br />
+    <%= f.text_field :remote_image_url %>
+  </div>
+    <%= f.submit 'Add Painting' %>
+<% end %>
