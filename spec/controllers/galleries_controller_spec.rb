@@ -10,10 +10,9 @@ RSpec.describe GalleriesController, :type => :controller do
 
   describe "GET index" do
     it "returns http success" do
-      gallery = FactoryGirl.create(:gallery)
       get :index
       expect(response).to be_success
-      expect(assigns(:galleries)).to eq([gallery])
+      expect(assigns(:galleries)).to eq([@gallery])
     end
   end
 
@@ -27,14 +26,16 @@ RSpec.describe GalleriesController, :type => :controller do
 
   describe "GET destroy" do
     it "returns http success" do
-      get :destroy
-      expect(response).to be_success
+      gallery = FactoryGirl.create(:gallery)
+      expect{
+        delete :destroy, id: gallery 
+      }.to change(Gallery,:count).by(-1)
     end
   end
 
   describe "GET update" do
     it "returns http success" do
-      get :update
+      get :update, id: @gallery
       expect(response).to be_success
     end
   end
@@ -48,9 +49,16 @@ RSpec.describe GalleriesController, :type => :controller do
 
   describe "GET edit" do
     it "returns http success" do
-      get :edit
+      get :edit, id: @gallery
       expect(response).to be_success
     end
   end
 
+  describe "POST create" do
+    it "creates a new contact" do 
+      expect{
+        post :create, gallery: FactoryGirl.attributes_for(:gallery) 
+      }.to change(Gallery,:count).by(1)
+    end
+  end
 end

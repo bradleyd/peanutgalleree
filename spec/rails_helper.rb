@@ -23,6 +23,7 @@ RSpec.configure do |config|
   #config.fixture_path = "#{::Rails.root}/spec/fixtures"
   config.include Devise::TestHelpers, :type => :controller
   config.extend ControllerMacros, :type => :controller
+  config.extend ControllerMacros, :type => :feature
 
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your

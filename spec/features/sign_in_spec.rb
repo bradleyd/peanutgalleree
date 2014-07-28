@@ -1,8 +1,4 @@
 require "rails_helper"
-# Feature: Sign in
-#   As a user
-#   I want to sign in
-#   So I can visit protected areas of the site
 feature 'Sign in', :devise do
 
   # Scenario: User cannot sign in if not registered
@@ -10,7 +6,6 @@ feature 'Sign in', :devise do
   #   When I sign in with valid credentials
   #   Then I see an invalid credentials message
   scenario 'user cannot sign in if not registered' do
-    login_user
     signin('test@example.com', 'please123')
     expect(page).to have_content 'Invalid email or password.'
   end
@@ -22,6 +17,7 @@ feature 'Sign in', :devise do
   #   Then I see a success message
   scenario 'user can sign in with valid credentials' do
     user = FactoryGirl.create(:user)
+    user.confirm!
     signin(user.email, user.password)
     expect(page).to have_content 'Signed in successfully.'
   end
