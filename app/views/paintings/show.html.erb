@@ -1,2 +1,31 @@
 <h1>Paintings#show</h1>
-<p>Find me in app/views/paintings/show.html.erb</p>
+
+<div id="content">
+  <div class="wrap">
+    <div class="c-12">
+
+      <h2 class="portfolio-title"><%= @painting.try(:name) %></h2>
+      <h4 class="portfolio-title"><%= @painting.try(:description) %></h4>
+      <%= link_to "Remove Painting", painting_path(@painting), :method => :delete %>
+      <%= link_to edit_painting_path(@painting), :class=>"read-more" do %>
+        Edit Painting
+      <span class="circle-arrow"></span>
+    <% end %>
+
+      </br>
+      <ul class="portfolio-menu">
+        <li class="c-3 four-column">
+        <p class="image">
+        <%= link_to @painting,{:rel => 'example_group'} do %> 
+          <span class="gallery-4col-mask"></span>
+        <%= image_tag @painting.image_url(:thumb), :size => "194x157" if @painting.image? %>
+      <%end%>
+        </p>
+        </li>
+        <li class="c-3 four-column clearfix">
+        <p class='image'>
+        </p>
+        </li>
+      </div>
+    </div>
+</div>

@@ -13,18 +13,18 @@ RSpec.describe PaintingsController, :type => :feature do
     it "should create painting for logged in user" do
       painting = FactoryGirl.build(:painting)
       visit new_painting_path(gallery_id: @gallery.id)
-      print page.html
       fill_in("painting_name", with: "foo")
       attach_file "painting_image", "spec/support/fake_image.jpg"
       click_button "Add Painting"
-      expect(page).to have_content 'Your new painting is uploaded!'
+      expect(page).to have_content 'Your painting was added'
     end
   end
 
   context "destroy a painting" do
     it "should destroy the painting" do
-      #visit painting_path, 
-      
+      visit painting_path(@painting)
+      click_link "Remove Painting"
+      expect(page).to have_content 'Your painting was removed'
     end
   end
 end

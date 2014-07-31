@@ -11,7 +11,6 @@
     </div>
   <% end %>
   
-  <% f.hidden_field :gallery_id, value: @gallery.id %>
 
   <div class="field">
     <%= f.label :name %><br />
@@ -36,5 +35,7 @@
     <%= f.label :remote_image_url, "or image URL" %><br />
     <%= f.text_field :remote_image_url %>
   </div>
-    <%= f.submit 'Add Painting' %>
+
+  <%= f.hidden_field :gallery_id %>
+  <%= f.submit 'Add Painting' %>
 <% end %>

@@ -5,19 +5,21 @@ class PaintingsController < ApplicationController
   def new
     @user = current_user
     @gallery = Gallery.find(params[:gallery_id])
-    @painting = @gallery.paintings.build
+    @painting = @gallery.paintings.new
   end
 
   def destroy
+    @painting = Painting.find(params[:id])
+    @painting.destroy
+    redirect_to galleries_url, notice: 'Your painting was removed'
   end
 
   def edit
   end
 
   def create
-    p dbg: params
     @user = current_user
-    @gallery = Gallery.find(params[:gallery_id])
+    @gallery = Gallery.find(params[:painting][:gallery_id])
     @painting = @gallery.paintings.new(painting_params)
     if @painting.save
       redirect_to @painting, notice: "Your painting was added."
@@ -30,6 +32,7 @@ class PaintingsController < ApplicationController
   end
 
   def show
+    @painting = Painting.find(params[:id])
   end
 
   private

@@ -24,4 +24,10 @@ RSpec.describe GalleriesController, :type => :feature do
       
     end
   end
+
+  context "add painting from a gallery" do
+    it "should be able to add a painting" do
+      
+    end
+  end
 end
