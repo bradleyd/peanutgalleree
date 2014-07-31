@@ -1,4 +1,5 @@
 class PaintingsController < ApplicationController
+
   def index
   end
 
@@ -15,6 +16,7 @@ class PaintingsController < ApplicationController
   end
 
   def edit
+    @painting = Painting.find(params[:id])
   end
 
   def create
@@ -29,14 +31,21 @@ class PaintingsController < ApplicationController
   end
 
   def update
+    @painting = Painting.find(params[:id])
+    if @painting.update_attributes(painting_params)
+      redirect_to @painting, notice: 'Painting was successfully updated.'
+    else
+      render :edit 
+    end
   end
 
   def show
     @painting = Painting.find(params[:id])
+    @gallery = @painting.gallery
   end
 
   private
   def painting_params
-    params.require(:painting).permit(:name, :description, :gallery_id)
+    params.require(:painting).permit(:name, :description, :gallery_id, :image, :remote_image_url)
   end
 end

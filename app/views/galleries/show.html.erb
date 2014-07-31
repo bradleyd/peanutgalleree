@@ -1,1 +1,36 @@
 <h1><%= @gallery.name %></h1>
+
+
+
+
+<%= link_to "Add painting", new_painting_path(:gallery_id => @gallery) %>
+
+<ul class="portfolio-menu">
+  <% @paintings.each do |painting| %>
+    <li class="c-3 four-column">
+
+  <p class="image">
+  <%= link_to painting, {:rel => 'example_group'} do %> 
+    <span class="gallery-4col-mask"></span>
+  <%= image_tag painting.image_url(:thumb) if painting.image? %>
+<%end%>
+  </p>
+  </li>
+<% end %>
+  <li class="c-3 four-column clearfix">
+  <p class='image'>
+  </p>
+  </li>
+
+  <div class="pagination">
+    <ul>
+      <li><a href="#" class="previous-1"><span class="circle-arrow-left"></span>Previous</a></li>
+      <li><a href="#" class="current">1</a></li>
+      <li><a href="#">2</a></li>
+      <li><a href="#">3</a></li>
+      <li><a href="#">4</a></li>
+      <li><a href="#">5</a></li>
+      <li><a href="#" class="next-1">Next<span class="circle-arrow"></span></a></li>
+    </ul>
+  </div>
+</div>

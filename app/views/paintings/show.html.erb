@@ -18,7 +18,7 @@
         <p class="image">
         <%= link_to @painting,{:rel => 'example_group'} do %> 
           <span class="gallery-4col-mask"></span>
-        <%= image_tag @painting.image_url(:thumb), :size => "194x157" if @painting.image? %>
+        <%= image_tag @painting.image_url if @painting.image? %>
       <%end%>
         </p>
         </li>
@@ -29,3 +29,4 @@
       </div>
     </div>
 </div>
+      <%= link_to "Back to Gallery", gallery_path(id: @gallery.id) %>

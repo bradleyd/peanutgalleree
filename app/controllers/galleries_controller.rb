@@ -13,6 +13,7 @@ class GalleriesController < ApplicationController
   def show
     @user = current_user
     @gallery = Gallery.find(params[:id])
+    @paintings = @gallery.paintings
   end
 
   def create

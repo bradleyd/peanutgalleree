@@ -8,14 +8,23 @@
 </head>
 <body>
 
-
+<div class="container">
 <% flash.each do |name, msg| %>
     <% if msg.is_a?(String) %>
       <%= content_tag :div, msg, :class => "flash_#{name}" %>
   <% end %>
 <% end %>
+     <h1><%= link_to '' %></h1>
+        
+        <div id="main-navigation">
+            <ul class="dd-menu">
+                <li><%= link_to "Home", welcome_index_path  %></li>
+                 <li><%= link_to 'Gallery', galleries_path, :title => 'Gallery' %></li>
+            </ul><!-- end dd-menu -->
+                    
+            </div><!-- end main-navigation -->
 
 <%= yield %>
-
+</div>
 </body>
 </html>
